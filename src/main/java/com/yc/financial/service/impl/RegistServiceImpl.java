@@ -20,4 +20,9 @@ public class RegistServiceImpl implements RegistService{
 		return udao.selectByRegist(users);
 	}
 
+	@Override
+	public List<UsersVO> selectByAccount(UsersVO users) {
+		return udao.selectByAccount(users);
+	}
+
 }

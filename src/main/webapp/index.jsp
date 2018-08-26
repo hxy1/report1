@@ -11,7 +11,6 @@
   <link rel="stylesheet" type="text/css" href="./layui/css/layui.css" media="all" />
 </head>
 <%
-// 如果不是servlet跳转过来，则应跳至  board.s  servlet
 if(request.getAttribute("modi") == null){
 	request.setAttribute("modi","0");
 }

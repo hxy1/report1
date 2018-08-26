@@ -36,7 +36,6 @@ public class ModifyPwdAction {
 	
 	@RequestMapping(value="/modifyEmail")
 	public @ResponseBody String modifyEmail(String email,HttpSession session,String jspType){
-		System.out.println("和加斯氨基酸");
 		if(email.endsWith("@qq.com") || email.endsWith("@163.com") || email.endsWith("@126.com")){
 			//修改资料界面和修改密码界面公用一个验证。默认修改资料
 			Integer sign = null;

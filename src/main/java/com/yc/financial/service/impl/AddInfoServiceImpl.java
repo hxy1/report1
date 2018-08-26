@@ -16,10 +16,14 @@ public class AddInfoServiceImpl implements AddInfoService {
 	private UsersDAO udao;
 	
 	@Override
-	public List<UsersVO> AddInfo(UsersVO users) {
+	public UsersVO AddInfo(UsersVO users) {
 		return udao.AddInfo(users);
 	}
 
+	@Override
+	public UsersVO selectByUid(UsersVO users) {
+		return udao.selectByUid(users);
+	}
 	
 	
 }

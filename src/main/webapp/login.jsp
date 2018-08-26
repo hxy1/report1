@@ -42,6 +42,7 @@ a {
 </div>
 
 </head>
+
 <body class="beg-login-bg">
 
 	<!-- 登录页面-->
@@ -96,8 +97,8 @@ a {
 				<div class="layui-form-item">
 					<label class="beg-login-icon"> <i class="layui-icon">&#xe612;</i>
 					</label> <input type="text" lay-verify="required" name="account"
-						autocomplete="off" placeholder="请输入账号" class="layui-input"
-						lay-verType="tips">
+						id="account" autocomplete="off" placeholder="请输入账号" class="layui-input"
+						lay-verType="tips" onblur="message()">
 				</div>
 				<div class="layui-form-item">
 					<label class="beg-login-icon"> <i class="layui-icon">&#xe642;</i>
@@ -157,6 +158,7 @@ a {
 	<script type="text/javascript" src="./layui1/layui.js"></script>
 	<script type="text/javascript" src="./js/login.js"></script>
 	<script type="text/javascript">
+	
 		function add(){
 			var index = layer.open({
 				type:2, //2（iframe层）
@@ -200,6 +202,16 @@ a {
 				add();
 			}
 		});
+		
+		function message(){
+			var account = $("#account").val();
+			$.post("verAccount",{account:account},function(data){
+				if(data == "no"){
+					document.getElementById('account').value="";
+					alert("账号已存在，请重新输入！");
+				}
+			})
+		}
 		
 	</script>
 </body>
