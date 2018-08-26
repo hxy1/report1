@@ -28,7 +28,10 @@ public class RegistAction {
 		if(list1.size()>0){
 			return "login";
 		}else{	
-		String upwd = md5.GetMD5Code(request.getParameter("upwd"));
+			String account = request.getParameter("account");
+			session.setAttribute("account", account);
+			
+			String upwd = md5.GetMD5Code(request.getParameter("upwd"));
 			users.setUpwd(upwd);
 			Integer list = registservice.Regist(users);
 		}

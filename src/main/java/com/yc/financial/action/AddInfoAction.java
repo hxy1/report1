@@ -44,6 +44,8 @@ public class AddInfoAction {
 		}
 		List<UsersVO> list1 = registservice.selectByAccount(users);
 		addinfoService.AddInfo(users);
+		String account = (String) session.getAttribute("account");
+		System.out.println(account);
 		return "index";
 	}
 	
